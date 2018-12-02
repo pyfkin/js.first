@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+    <title>Title</title>
+</head>
+<body>
+<table border="1px" cellpadding="5" cellspacing="0" class="user-data">
+    <thead>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<button class="add">add new user</button>
+<button class="new">temp</button>
+<div class="modalAdd">
+    <fieldset>
+        <label>
+            <span>First Name</span>
+            <input type="text" name="firstName">
+        </label>
+    </fieldset>
+    <fieldset>
+        <label>
+            <span>Last Name</span>
+            <input type="text" name="lastName">
+        </label>
+    </fieldset>
+    <fieldset>
+        <label>
+            <span>Age</span>
+            <input type="text" name="age">
+        </label>
+    </fieldset>
+    <fieldset class="buttons">
+        <button class="sendAdd">ok</button>
+        <button class="cancelAdd">cancel</button>
+    </fieldset>
+</div>
+<div class="modalEdit">
+    <fieldset>
+        <label>
+            <span>First Name</span>
+            <input type="text" name="firstName">
+        </label>
+    </fieldset>
+    <fieldset>
+        <label>
+            <span>Last Name</span>
+            <input type="text" name="lastName">
+        </label>
+    </fieldset>
+    <fieldset>
+        <label>
+            <span>Age</span>
+            <input type="text" name="age">
+        </label>
+    </fieldset>
+    <fieldset class="buttons">
+        <button class="sendEdit">ok</button>
+        <button class="cancelEdit">cancel</button>
+    </fieldset>
+</div>
+<div class="edit-delete">
+    <p>Выберите действие для элемента № </p>
+    <fieldset class="buttons">
+        <button class="edit">edit</button>
+        <button class="delete">delete</button>
+        <button class="cancel">cancel</button>
+    </fieldset>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
