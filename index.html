@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="main.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
     <title>Title</title>
 </head>
 <body>
@@ -14,10 +15,16 @@
         <th>Age</th>
     </tr>
     </thead>
-    <tbody></tbody>
+    <tbody id="tableBodyId"></tbody>
 </table>
-<button class="add">add new user</button>
-<button class="new">temp</button>
+<button class="add" id="buttonNewUser">add new user</button>
+<button class="temp" id="message" data-counter data-tooltip="fdksjgad safl sdaf dsahf">2</button>
+<div id="rect"></div>
+<div id="rect2"></div>
+<form name="qweee"></form>
+<div>
+    <button id="telephone">Get telephone</button>
+</div>
 <div class="modalAdd">
     <fieldset>
         <label>
@@ -38,11 +45,13 @@
         </label>
     </fieldset>
     <fieldset class="buttons">
-        <button class="sendAdd">ok</button>
-        <button class="cancelAdd">cancel</button>
+        <button class="sendAdd" id="buttonSendAdd">ok</button>
+        <button class="cancelAdd" id="buttonCancelAdd">cancel</button>
     </fieldset>
+    <button class="modal-close"></button>
 </div>
 <div class="modalEdit">
+    <p>Выберите действие для элемента № <span></span>.</p>
     <fieldset>
         <label>
             <span>First Name</span>
@@ -62,16 +71,16 @@
         </label>
     </fieldset>
     <fieldset class="buttons">
-        <button class="sendEdit">ok</button>
-        <button class="cancelEdit">cancel</button>
+        <button class="sendEdit" id="sendEdit">ok</button>
+        <button class="cancelEdit" id="cancelEdit">cancel</button>
     </fieldset>
 </div>
 <div class="edit-delete">
-    <p>Выберите действие для элемента № </p>
+    <p>Выберите действие для элемента № <span></span>.</p>
     <fieldset class="buttons">
-        <button class="edit">edit</button>
-        <button class="delete">delete</button>
-        <button class="cancel">cancel</button>
+        <button class="edit" id="buttonEdit">edit</button>
+        <button class="delete" id="buttonDelete">delete</button>
+        <button class="cancel" id="buttonCancelEditDelete">cancel</button>
     </fieldset>
 </div>
 <script src="script.js"></script>

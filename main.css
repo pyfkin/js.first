@@ -1,12 +1,13 @@
-.add{
+.add {
     margin: 10px 0;
 }
+
 .modalAdd,
 .modalEdit,
-.edit-delete{
-    border: 1px solid rgba(0,0,0,.5);
+.edit-delete {
+    border: 1px solid rgba(0, 0, 0, .5);
     border-radius: 10px;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     width: 400px;
@@ -14,44 +15,46 @@
     padding: 40px 10px 20px;
     display: none;
 }
-.edit-delete{
+
+.edit-delete {
     padding-top: 0;
     width: 350px;
-}
-.edit-delete span {
-    display: block;
 }
 
 .modalAdd.active,
 .modalEdit.active,
-.edit-delete.active{
+.edit-delete.active {
     display: block;
 }
 
 .modalAdd fieldset,
-.modalEdit fieldset{
+.modalEdit fieldset {
     border: none;
     font-size: 0;
     margin-bottom: 10px;
 }
+
 .modalAdd fieldset span,
-.modalEdit fieldset span{
+.modalEdit fieldset span {
     display: inline-block;
     width: 30%;
     font-size: 16px;
 }
+
 .modalAdd fieldset input,
-.modalEdit fieldset input{
+.modalEdit fieldset input {
     display: inline-block;
     width: 70%;
     font-size: 16px;
     box-sizing: border-box;
 }
-fieldset.buttons{
+
+fieldset.buttons {
     text-align: center;
 }
-button{
-    border: 1px solid rgba(0,0,0,.5);
+
+button {
+    border: 1px solid rgba(0, 0, 0, .5);
     background: transparent;
     text-transform: uppercase;
     border-radius: 3px;
@@ -59,6 +62,94 @@ button{
     cursor: pointer;
     padding: 5px 10px;
 }
-button:hover{
-    background: rgba(0,0,0,.1);
+
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: -34px;
+    width: 22px;
+    height: 22px;
+
+    background-color: transparent;
+
+    border: 0;
+    cursor: pointer;
+}
+
+.modal-close::before,
+.modal-close::after {
+    content: '';
+
+    position: absolute;
+    top: 10px;
+    left: 1px;
+
+    width: 19px;
+    height: 3px;
+    background-color: #000;
+}
+
+.modal-close::before {
+    transform: rotate(45deg);
+}
+
+.modal-close::after {
+    transform: rotate(-45deg);
+}
+
+button:hover {
+    background: rgba(0, 0, 0, .1);
+}
+
+.tooltip {
+    position: fixed;
+    padding: 10px 20px;
+    /* красивости... */
+
+    border: 1px solid #b3c9ce;
+    border-radius: 4px;
+    text-align: center;
+    font: italic 14px/1.3 sans-serif;
+    color: #333;
+    background: #fff;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+}
+
+.tooltip-bottom {
+    position: fixed;
+    padding: 10px 20px;
+    /* красивости... */
+    border: 1px solid #b3c9ce;
+    border-radius: 4px;
+    text-align: center;
+    font: italic 14px/1.3 sans-serif;
+    color: #444;
+    background: #fff;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+}
+
+.rect {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    background-color: #333;
+    cursor: pointer;
+}
+
+#rect {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 100px;
+    left: 600px;
+    background: #333;
+}
+
+#rect2 {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 200px;
+    left: 500px;
+    background: #271;
 }
