@@ -1,11 +1,11 @@
 let jQ = jQuery.noConflict();
-    var models = {
-        modalAdd: document.querySelector('.modalAdd'),
-        modalEdit: document.querySelector('.modalEdit'),
-        editDelete: document.querySelector('.edit-delete')
-    };
+let models = {
+    modalAdd: document.querySelector('.modalAdd'),
+    modalEdit: document.querySelector('.modalEdit'),
+    editDelete: document.querySelector('.edit-delete')
+};
 
-    function User(firstName, lastName, age) {
+function User(firstName, lastName, age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -79,13 +79,14 @@ function defaultColor(rowIndex){
         deleteRow();
         models.editDelete.classList.remove('active');
 });
-    var tbl = document.getElementById('tableBodyId');
-    tbl.addEventListener("click", function (event) {
-        var target = event.target;
-        tableBodyId.rows.style.backgroundColor = "white";
-        target.parentElement.style.backgroundColor = "red";
-        choiceEditDelete(target.parentElement.rowIndex);
-});
+//     var tbl = document.getElementById('tableBodyId');
+//     tbl.addEventListener("click", function (event) {
+//         var target = event.target;
+//
+//         target.parentElement.style.backgroundColor = "red";
+//         choiceEditDelete(target.parentElement.rowIndex);
+//         target.parentElement.style.backgroundColor = "white";
+// });
     sendEdit.addEventListener("click", function () {
         var indexRow = models.modalEdit.getElementsByTagName('span')[0];
         edited(indexRow.innerHTML);
@@ -115,81 +116,42 @@ createTable(Ashton);
 createTable(Bradley);
 createTable(Hannah);
 
-    //
-    // var showingTooltip;
-    //
-    // document.onmouseover = function(e) {
-    //     var target = e.target;
-    //
-    //     var tooltip = target.getAttribute('data-tooltip');
-    //     if (!tooltip) return;
-    //
-    //     var tooltipElem = document.createElement('div');
-    //     tooltipElem.className = 'tooltip';
-    //     tooltipElem.innerHTML = tooltip;
-    //     document.body.appendChild(tooltipElem);
-    //
-    //     var coords = target.getBoundingClientRect();
-    //
-    //     var left = coords.left + (target.offsetWidth - tooltipElem.offsetWidth) / 2;
-    //     if (left < 0) left = 0; // не вылезать за левую границу окна
-    //
-    //     var top = coords.top - tooltipElem.offsetHeight - 5;
-    //     if (top < 0) { // не вылезать за верхнюю границу окна
-    //         top = coords.top + target.offsetHeight + 5;
-    //     }
-    //
-    //     tooltipElem.style.left = left + 'px';
-    //     tooltipElem.style.top = top + 'px';
-    //
-    //     showingTooltip = tooltipElem;
-    // };
-    //
-    // document.onmouseout = function(e) {
-    //
-    //     if (showingTooltip) {
-    //         document.body.removeChild(showingTooltip);
-    //         showingTooltip = null;
-    //     }
-    //
-    // };
-
-    var btn = document.getElementById('message');
+   // var btn = document.getElementById('message');
 
 
-function createMessage(elem, text) {
-    var koords = elem.target.getBoundingClientRect();
-    let mess = document.createElement("div");
-    //var mess = document.querySelector('.tooltip-bottom');
-
-    mess.classList.add('tooltip-bottom');
-    mess = document.body.appendChild(mess);
-
-    mess.style.top = koords.top - mess.offsetHeight + "px";
-    mess.style.left = koords.left + "px";
-    mess.innerHTML = 'Всплывающая подсказка для "' + text + '"';
-}
-
-function showHideMessage(e){
-    if (!e.target.hasAttribute('data-tooltip')) return;
-    createMessage(e, e.innerHTML);
-}
-function clickCounter(e){
-    if (!e.target.hasAttribute('data-counter')) return;
-    var counter = e.target;
-    counter.innerHTML++;
-}
-
-document.addEventListener("mouseover", function(e){
-    showHideMessage(e);
-});
-document.addEventListener("mouseout", function(e){
-    document.querySelector('.tooltip-bottom').remove();
-
-});
-document.addEventListener("click" , function(e){
-    clickCounter(e);
-    });
+// function createMessage(elem, text) {
+//     var koords = elem.target.getBoundingClientRect();
+//     let mess = document.createElement("div");
+//     //var mess = document.querySelector('.tooltip-bottom');
+//
+//     mess.classList.add('tooltip-bottom');
+//     mess = document.body.appendChild(mess);
+//
+//     mess.style.top = koords.top - mess.offsetHeight + "px";
+//     mess.style.left = koords.left + "px";
+//     mess.innerHTML = 'Всплывающая подсказка для "' + text + '"';
+// }
+//
+// function showHideMessage(e){
+//     if (!e.target.hasAttribute('data-tooltip')) return;
+//     createMessage(e, e.innerHTML);
+// }
+// function clickCounter(e){
+//     if (!e.target.hasAttribute('data-counter')) return;
+//     var counter = e.target;
+//     counter.innerHTML++;
+// }
+//
+// document.addEventListener("mouseover", function(e){
+//     showHideMessage(e);
+// });
+// document.addEventListener("mouseout", function(e){
+//     document.querySelector('.tooltip-bottom').remove();
+//
+// });
+// document.addEventListener("click" , function(e){
+//     clickCounter(e);
+//     });
 
     var rec = document.getElementById('rect');
     var rec2 = document.getElementById('rect2');
@@ -269,18 +231,18 @@ document.addEventListener("click" , function(e){
     jQ(document).ready(function(){
         jQ("#tableBodyId").click(function(e){
             alert(jQ(e.target).closest("tr")[0].cells[0].innerText);
-            // alert(e.target.innerHTML);
+            // // alert(e.target.innerHTML);
             // jQ(e.target).text('asdf;lj');
             // alert(e.target.cellIndex);
             // alert(e.target.rowIndex);
+            // $(window).scrollTop(500);
         });
 
-        var $ulElements = $('ul');
-        $ulElements
 
 
         jQ("#buttonNewUser").click(function (e) {
-            jQ(".modalAdd").show(600);
+            jQ(".modalAdd").show();
+
         });
 
         jQ(".cancelAdd, .modal-close").click(function (e) {
@@ -290,7 +252,7 @@ document.addEventListener("click" , function(e){
 
 
 
-//
-// buttonNewUser.addEventListener("click",  function() {
-//     models.modalAdd.classList.add('active');
-// });
+
+buttonNewUser.addEventListener("click",  function() {
+    models.modalAdd.classList.add('active');
+});
